@@ -18,10 +18,7 @@ module OpenapiFirst
             base.include OpenapiFirst::Test::Methods::AssertionMethod
           end
         end
-        mod.define_method(:openapi_first_validate_request_after_handling?) do
-          debugger
-          validate_request_after_handling
-        end
+        mod.define_method(:openapi_first_validate_request_after_handling?) { validate_request_after_handling }
 
         if api
           mod.define_method(:openapi_first_default_api) { api }
