@@ -21,6 +21,7 @@ module OpenapiFirst
         validation = @root_schema.validate(root_value)
         validations = @schemas.reduce(validation) do |enum, (key, schema)|
           root_value[key] = schema.value['default'] if schema.value.key?('default') && !root_value.key?(key)
+          debugger unless root_value.key?(key)
           next enum unless root_value.key?(key)
 
           value = root_value[key]
